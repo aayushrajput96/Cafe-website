@@ -1,0 +1,19 @@
+<!-- reviews.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+</head>
+<body>
+    <h1>Customer Reviews</h1>
+    <ul>
+    {% for review in reviews %}
+        <li>{{ review.author }} - {{ review.created_at|date:"F d, Y" }}</li>
+        <p>{{ review.content }}</p>
+    {% empty %}
+        <li>No reviews yet.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

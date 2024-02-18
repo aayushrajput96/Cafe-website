@@ -1,0 +1,26 @@
+<!-- specials.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specials</title>
+</head>
+<body>
+    <h1>Specials</h1>
+    {% if specials %}
+        <ul>
+            {% for special in specials %}
+                <li>
+                    <h2>{{ special.title }}</h2>
+                    <p>{{ special.description }}</p>
+                    <p>Valid from: {{ special.start_date }} to {{ special.end_date }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No specials available at the moment.</p>
+    {% endif %}
+</body>
+</html>
